@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Turing: The Father of Modern Computing</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            transition: background-color 0.5s ease-in-out;
+        }
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        .slide-content {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            max-width: 900px;
+            width: 100%;
+        }
+        .slide-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        .slide-text {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: #4b5563;
+            line-height: 1.6;
+            margin-top: 1.5rem;
+        }
+        .slide-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 1.5rem;
+            border-radius: 1rem;
+            object-fit: contain;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .nav-button {
+            background-color: #4f46e5;
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+        .nav-button:hover {
+            transform: translateY(-2px);
+            background-color: #4338ca;
+        }
+        .resource-button {
+            background-color: #10b981;
+            color: white;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            text-decoration: none;
+        }
+        .resource-button:hover {
+            transform: translateY(-2px);
+            background-color: #059669;
+        }
+        .nav-container {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <!-- Slide 1: Title Slide -->
+    <div id="slide-1" class="slide active">
+        <div class="slide-content">
+            <h1 class="slide-title">Alan Turing: The Father of Modern Computing</h1>
+            <p class="slide-text font-semibold text-gray-500">An Interactive Presentation</p>
+            <button onclick="nextSlide()" class="nav-button mt-8">Start</button>
+        </div>
+    </div>
+
+    <!-- Slide 2: Early Life & Major Contributions -->
+    <div id="slide-2" class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title">Early Life & Major Contributions</h2>
+            <p class="slide-text">Born in London in 1912, Alan Turing was a brilliant mathematician and logician. His work laid the theoretical groundwork for the digital computer. His 1936 paper introduced the concept of the <strong>Turing Machine</strong>, a theoretical model of a computer that could perform any task if given the right algorithm. During World War II, he worked at <strong>Bletchley Park</strong>, where he played a pivotal role in cracking Nazi Germany's Enigma code, an effort that shortened the war by an estimated two to four years and saved countless lives. </p>
+            <div class="mt-8 flex items-center justify-center gap-4">
+                <button onclick="prevSlide()" class="nav-button">Previous</button>
+                <button onclick="nextSlide()" class="nav-button">Next</button>
+                <a href="https://www.youtube.com/watch?v=R9V4jV5l4Bw" target="_blank" class="resource-button">Watch Bletchley Park Video</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Contributions to Artificial Intelligence -->
+    <div id="slide-3" class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title">Contributions to Artificial Intelligence</h2>
+            <p class="slide-text">In his 1950 paper, "Computing Machinery and Intelligence," Turing proposed what is now known as the <strong>Turing Test</strong>. This test evaluates a machine's ability to exhibit intelligent behavior indistinguishable from that of a human. If a human interrogator cannot reliably tell the difference between a human and a machine's responses in a text-based conversation, the machine is said to have passed the test. This paper fundamentally shaped the field of artificial intelligence, shifting the conversation from "Can machines think?" to "Can machines imitate human thought?" </p>
+            <div class="mt-8 flex items-center justify-center gap-4">
+                <button onclick="prevSlide()" class="nav-button">Previous</button>
+                <button onclick="nextSlide()" class="nav-button">Next</button>
+                <a href="https://www.youtube.com/watch?v=sXx-PpEBR7k" target="_blank" class="resource-button">Learn More About the Turing Test</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: His Legacy: Influence on Modern AI -->
+    <div id="slide-4" class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title">His Legacy: Influence on Modern AI</h2>
+            <p class="slide-text">Turing's work on the universal machine provided the theoretical foundation for all of modern computing. His ideas about algorithms and "learning machines" directly inspired the development of machine learning, neural networks, and generative AI. Today's AI models, from large language models to image generators, are complex manifestations of the principles he first outlined. The ongoing pursuit of human-level AI continues to be guided by the philosophical and practical questions he posed over 70 years ago. 
+
+[Image of a neural network diagram]
+</p>
+            <div class="mt-8 flex items-center justify-center gap-4">
+                <button onclick="prevSlide()" class="nav-button">Previous</button>
+                <button onclick="nextSlide()" class="nav-button">Next</button>
+                <a href="https://www.nist.gov/blogs/taking-measure/alan-turings-everlasting-contributions-computing-ai-and-cryptography" target="_blank" class="resource-button">Read About His Enduring Influence</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Conclusion Slide -->
+    <div id="slide-5" class="slide">
+        <div class="slide-content">
+            <h2 class="slide-title">The Enduring Legacy of a Pioneer</h2>
+            <p class="slide-text">Alan Turing's contributions to computer science and artificial intelligence were transformative, and his life's work continues to resonate today. He laid the foundational stones for the digital world we inhabit and gave us the tools and concepts to ask what it truly means for a machine to think. His legacy is a powerful reminder of how theoretical ideas can profoundly change the world.</p>
+            <div class="mt-8 flex items-center justify-center gap-4">
+                <button onclick="prevSlide()" class="nav-button">Previous</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 5;
+
+        function showSlide(slideNumber) {
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            document.getElementById('slide-' + slideNumber).classList.add('active');
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        window.onload = () => {
+            showSlide(currentSlide);
+        };
+    </script>
+
+</body>
+</html>
