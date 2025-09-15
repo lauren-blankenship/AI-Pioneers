@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Father of Algebra and Algorithms</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .slide {
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-btn {
+            transition: all 0.3s ease-in-out;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white rounded-3xl shadow-xl max-w-4xl w-full mx-auto p-8 relative overflow-hidden">
+        <div id="slides-container">
+            <div class="slide active" data-index="0">
+                <div class="flex flex-col items-center text-center">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-800 mb-4">
+                        Muḥammad ibn Mūsā al-Khwārizmī
+                    </h1>
+                    <p class="text-lg sm:text-xl md:text-2xl text-indigo-600 font-semibold mb-6">
+                        The Father of Algebra and Algorithms
+                    </p>
+                    <div class="w-full h-px bg-gray-200 my-8"></div>
+                    <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                        A Persian polymath who played a pivotal role in the advancement of mathematics, astronomy, and geography during the Islamic Golden Age. His work is the foundation of modern computer science.
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide" data-index="1">
+                <div class="flex flex-col items-center text-center">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">A Scholar of the Islamic Golden Age</h2>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                        <div class="w-full md:w-1/2">
+                            <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                                Born around 780 CE, al-Khwārizmī was a key scholar at the **House of Wisdom** (Bayt al-Ḥikma) in Baghdad. This renowned institution was a center for translation and research, attracting brilliant minds from across the world.
+                            </p>
+                        </div>
+                        <div class="w-full md:w-1/2 flex justify-center items-center">
+                            
+                            <img src="https://placehold.co/400x250/d1d5db/4b5563?text=House+of+Wisdom" alt="A placeholder for the House of Wisdom" class="rounded-xl shadow-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" data-index="2">
+                <div class="flex flex-col items-center text-center">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">Revolutionary Mathematical Works</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-indigo-50 p-6 rounded-2xl shadow-sm border border-indigo-200">
+                            <h3 class="font-bold text-xl text-indigo-700 mb-2">Algebra</h3>
+                            <p class="text-gray-600 text-sm">
+                                His book, "*Kitab al-Jabr wa al-Muqabala*", introduced the formal discipline of algebra. The very word **'algebra'** is derived from the title of this work.
+                            </p>
+                        </div>
+                        <div class="bg-indigo-50 p-6 rounded-2xl shadow-sm border border-indigo-200">
+                            <h3 class="font-bold text-xl text-indigo-700 mb-2">Numerals</h3>
+                            <p class="text-gray-600 text-sm">
+                                He introduced the **Hindu-Arabic numeral system**, including the concept of **zero**, to the Western world, which revolutionized arithmetic and made complex calculations possible.
+                            </p>
+                        </div>
+                        <div class="bg-indigo-50 p-6 rounded-2xl shadow-sm border border-indigo-200">
+                            <h3 class="font-bold text-xl text-indigo-700 mb-2">Astronomy & Geography</h3>
+                            <p class="text-gray-600 text-sm">
+                                He created astronomical tables and revised Ptolemy's work on geography, contributing significantly to cartography and the understanding of the known world.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" data-index="3">
+                <div class="flex flex-col items-center text-center">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">The Origin of 'Algorithm'</h2>
+                    <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
+                        Al-Khwārizmī's systematic, step-by-step approach to solving mathematical problems was so influential that his name, when Latinized as **"Algoritmi,"** became the root of the word **"algorithm."**
+                    </p>
+                    
+                    <div class="w-full flex justify-center mb-6">
+                        <img src="https://placehold.co/400x250/d1d5db/4b5563?text=Flow+Chart+Algorithm" alt="A placeholder for a flow chart or algorithm diagram" class="rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" data-index="4">
+                <div class="flex flex-col items-center text-center">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">The Foundation of Modern Computing</h2>
+                    <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
+                        Al-Khwārizmī's logical frameworks laid the groundwork for today's digital world. The concept of an algorithm—a finite sequence of instructions for solving a problem—is the bedrock of all computer programming and, by extension, all forms of Artificial Intelligence.
+                    </p>
+                    
+                    <img src="https://placehold.co/400x250/d1d5db/4b5563?text=Neural+Network" alt="A placeholder for a neural network diagram" class="rounded-xl shadow-lg">
+                    <div class="w-full h-px bg-gray-200 my-4"></div>
+                    <ul class="text-gray-800 text-sm sm:text-base space-y-2 text-left w-full">
+                        <li><span class="font-semibold text-indigo-600">Machine Learning:</span> Algorithms are used to train models on data.</li>
+                        <li><span class="font-semibold text-indigo-600">Natural Language Processing:</span> Algorithms analyze and understand human language.</li>
+                        <li><span class="font-semibold text-indigo-600">Computer Vision:</span> Algorithms process and interpret images and videos.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 mt-8">
+            <button id="prevBtn" class="nav-btn bg-gray-200 text-gray-700 font-semibold py-2 px-4 rounded-full shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-75 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                Previous
+            </button>
+            <button id="nextBtn" class="nav-btn bg-indigo-600 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75">
+                Next
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentIndex = 0;
+
+            const updateSlides = () => {
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === currentIndex);
+                });
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = currentIndex === slides.length - 1;
+            };
+
+            nextBtn.addEventListener('click', () => {
+                if (currentIndex < slides.length - 1) {
+                    currentIndex++;
+                    updateSlides();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlides();
+                }
+            });
+
+            updateSlides(); // Initial state setup
+        });
+    </script>
+</body>
+</html>
