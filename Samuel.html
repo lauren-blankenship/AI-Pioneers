@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthur Samuel: A Pioneer in AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        .slide {
+            display: none;
+        }
+        .slide.active {
+            display: block;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        .navigation-buttons button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
+        }
+        #prevBtn {
+            background-color: #e5e7eb;
+            color: #4b5563;
+        }
+        #prevBtn:hover {
+            background-color: #d1d5db;
+        }
+        #nextBtn {
+            background-color: #1f2937;
+            color: #ffffff;
+        }
+        #nextBtn:hover {
+            background-color: #374151;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+
+    <div class="container">
+        <div class="card">
+            <!-- Slide 1: Title and Introduction -->
+            <div class="slide active">
+                <h1 class="text-4xl font-bold mb-4 text-center">Arthur Samuel: A Pioneer in AI</h1>
+                <p class="text-lg text-center text-gray-600">A look into the life and groundbreaking contributions of a key figure in artificial intelligence.</p>
+                <div class="flex justify-center mt-8">
+                    
+                </div>
+            </div>
+
+            <!-- Slide 2: Early Life and Career -->
+            <div class="slide">
+                <h2 class="text-3xl font-bold mb-4">Early Life and Career</h2>
+                <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+                    <li>Born on December 5, 1901, in Emporia, Kansas.</li>
+                    <li>Graduated from the College of Emporia in 1923.</li>
+                    <li>Earned a master's degree in electrical engineering from MIT in 1926.</li>
+                    <li>Worked at Bell Telephone Laboratories and contributed to radar technology during World War II.</li>
+                    <li>Became a professor at the University of Illinois before joining IBM in 1949.</li>
+                </ul>
+            </div>
+
+            <!-- Slide 3: The Checkers Program -->
+            <div class="slide">
+                <h2 class="text-3xl font-bold mb-4">The Checkers Program</h2>
+                <div class="flex items-center space-x-6">
+                    <div class="flex-shrink-0">
+                         
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-lg text-gray-700 mb-4">
+                            Samuel's most famous work was his checkers-playing program. Developed in the 1950s, it was one of the first programs to demonstrate the concept of self-learning.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+                            <li>**Self-Play:** The program played against itself to improve its skill.</li>
+                            <li>**Reinforcement Learning:** It learned from mistakes and updated its strategy.</li>
+                            <li>**Heuristic Search:** Used a scoring system to evaluate board positions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Contributions to AI and Machine Learning -->
+            <div class="slide">
+                <h2 class="text-3xl font-bold mb-4">Contributions to AI & Machine Learning</h2>
+                <p class="text-lg text-gray-700 mb-4">
+                    Samuel's work was groundbreaking. He is credited with popularizing the term **"machine learning"** in a 1959 article, establishing a core concept of modern AI. His work proved that computers could learn and adapt without being explicitly programmed for every scenario.
+                </p>
+            </div>
+
+            <!-- Slide 5: Influence on Modern AI -->
+            <div class="slide">
+                <h2 class="text-3xl font-bold mb-4">Influence on Modern AI</h2>
+                <p class="text-lg text-gray-700 mb-4">
+                    The techniques he developed are fundamental to today's technology. His methodologies are used in:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+                    <li>**Recommendation Systems:** Services like Netflix and Spotify.</li>
+                    <li>**Speech & Image Recognition:** Found in virtual assistants and facial recognition.</li>
+                    <li>**Autonomous Vehicles:** Self-driving cars making real-time decisions.</li>
+                    <li>**Game AI:** The basis for most modern game AI, from chess to video games.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons">
+            <button id="prevBtn" disabled>Previous</button>
+            <button id="nextBtn">Next</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) {
+                        slide.classList.add('active');
+                    }
+                });
+
+                // Update button states
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === slides.length - 1;
+            }
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            });
+
+            // Show the first slide initially
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
