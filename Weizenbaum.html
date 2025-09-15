@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Weizenbaum: An AI Pioneer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #1e293b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        .slideshow-container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 500px;
+        }
+        .slide {
+            display: none;
+            flex-grow: 1;
+            padding: 2rem;
+            animation: fadeIn 0.8s ease-in-out;
+            display: flex;
+            flex-direction: column;
+        }
+        .slide.active {
+            display: flex;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background-color: #f9fafb;
+            border-top: 1px solid #e2e8f0;
+        }
+        .nav-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .nav-button.bg-blue-600 {
+            background-color: #2563eb;
+            color: #ffffff;
+        }
+        .nav-button.bg-blue-600:hover {
+            background-color: #1e40af;
+        }
+        .nav-button:disabled {
+            background-color: #cbd5e1;
+            color: #64748b;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        .slide-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1e40af;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .slide-content h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+        .slide-content p, .slide-content ul {
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+        .slide-content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+    <!-- Slides -->
+    <div id="slide-1" class="slide active">
+        <div class="flex-grow flex flex-col justify-center">
+            <h1 class="slide-title">Joseph Weizenbaum: An AI Pioneer</h1>
+            <p class="text-center text-lg text-slate-600">Explore the life, contributions, and critical legacy of a fascinating figure in the history of artificial intelligence.</p>
+        </div>
+    </div>
+
+    <div id="slide-2" class="slide">
+        <div class="slide-content">
+            <h2 class="text-3xl text-center font-bold mb-4">Early Life & Escape</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/400x300/a0c4ff/ffffff?text=Joseph+Weizenbaum" alt="A placeholder image of Joseph Weizenbaum" class="rounded-xl shadow-lg mb-4 md:mb-0">
+                </div>
+                <div class="md:w-1/2">
+                    <p>Born in Berlin, Germany in 1923, Joseph Weizenbaum's early life was marked by the rise of the Nazi regime. As a Jewish family, they were forced to flee, immigrating to the United States in 1936.</p>
+                    <p>He later pursued his education in mathematics at Wayne State University, though his studies were briefly put on hold to serve as a meteorologist in the U.S. Army Air Corps during World War II.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="slide-3" class="slide">
+        <div class="slide-content">
+            <h2 class="text-3xl text-center font-bold mb-4">The ELIZA Program</h2>
+            <p>Weizenbaum's most famous contribution to computer science was the development of ELIZA, one of the first chatbots. Created at MIT in the mid-1960s, ELIZA was a natural language processing program.</p>
+            <p>It didn't truly "understand" language. Instead, it used a simple method of pattern matching and substitution to create responses. The most well-known part of the program was its "DOCTOR" script, which mimicked the non-directive style of a Rogerian psychotherapist by rephrasing user input as questions.</p>
+        </div>
+    </div>
+
+    <div id="slide-4" class="slide">
+        <div class="slide-content">
+            <h2 class="text-3xl text-center font-bold mb-4">The ELIZA Effect & Its Legacy</h2>
+            <p>Despite its simplicity, ELIZA had a profound and unexpected impact. Weizenbaum was disturbed to find that people, including his own secretary, began to confide in the program as if it were a real, empathetic being. This phenomenon became known as the <strong>"ELIZA effect"</strong>.</p>
+            <p>The ELIZA effect highlights the human tendency to anthropomorphize machines—to attribute human-like qualities and understanding to them, even when they don't exist.</p>
+        </div>
+    </div>
+
+    <div id="slide-5" class="slide">
+        <div class="slide-content">
+            <h2 class="text-3xl text-center font-bold mb-4">A Critic of AI</h2>
+            <p>The experience with ELIZA prompted Weizenbaum to become a fierce critic of the field he helped create. He argued against the overestimation of computer capabilities and the moral and ethical implications of entrusting machines with human responsibilities.</p>
+            <p>In his 1976 book, <strong><em>Computer Power and Human Reason</em></strong>, he warned against the dangers of viewing the world through a purely computational lens and stressed the critical difference between human judgment and a computer's ability to calculate.</p>
+        </div>
+    </div>
+
+    <div id="slide-6" class="slide">
+        <div class="slide-content">
+            <h2 class="text-3xl text-center font-bold mb-4">Influence on Today's AI</h2>
+            <p>Weizenbaum's legacy is crucial in the modern AI era. His work serves as a foundational text for ethical discussions in computer science. His questions about whether certain tasks should ever be automated—regardless of whether they can be—are more relevant than ever.</p>
+            <p>He reminds us that while AI can be a powerful tool, it lacks human qualities like wisdom, empathy, and judgment. His work is a powerful counterpoint to the hype, urging us to consider the social and ethical consequences of the technology we build.</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation-buttons">
+        <button id="prevBtn" class="nav-button bg-blue-600" disabled>Previous</button>
+        <button id="nextBtn" class="nav-button bg-blue-600">Next</button>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+            updateButtons(index);
+        }
+
+        function updateButtons(index) {
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === slides.length - 1;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        });
+
+        // Initialize the first slide
+        showSlide(currentSlide);
+    });
+</script>
+
+</body>
+</html>
+
