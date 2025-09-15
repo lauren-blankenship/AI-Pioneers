@@ -1,148 +1,196 @@
-import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
-
-export default function BoolePresentation() {
-  const [slide, setSlide] = useState(0);
-
-  const slides = [
-    {
-      title: "George Boole: Early Life",
-      content: (
-        <>
-          <p className="mb-2">Born: November 2, 1815, Lincoln, England</p>
-          <p className="mb-2">Self-taught in advanced mathematics and languages.</p>
-          <p className="mb-2">Became first professor of mathematics at Queen’s College, Cork in 1849.</p>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/3/3c/George_Boole_color.jpg"
-            alt="Portrait of George Boole"
-            className="rounded-2xl shadow-md mt-4"
-          />
-          <Button className="mt-4" asChild>
-            <a
-              href="https://www.youtube.com/watch?v=ywWBy6J5gz8"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn More <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
-        </>
-      ),
-    },
-    {
-      title: "Major Contributions",
-      content: (
-        <>
-          <ul className="list-disc pl-5 mb-2">
-            <li>Developed Boolean Algebra (1854)</li>
-            <li>Applied algebra to logic and reasoning</li>
-            <li>Worked on differential equations and probability</li>
-          </ul>
-          <img
-            src="https://miro.medium.com/v2/resize:fit:800/1*2GkZZgwyU_FvF7rjD3KyRQ.png"
-            alt="Boolean algebra diagram"
-            className="rounded-2xl shadow-md mt-4"
-          />
-          <Button className="mt-4" asChild>
-            <a
-              href="https://plato.stanford.edu/entries/boole/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Stanford Encyclopedia Entry <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
-        </>
-      ),
-    },
-    {
-      title: "Contributions to AI",
-      content: (
-        <>
-          <p className="mb-2">Boolean algebra laid the foundation for computer logic.</p>
-          <p className="mb-2">Early AI systems used Boolean logic for decision-making.</p>
-          <p className="mb-2">Claude Shannon applied Boolean algebra to digital circuits, enabling modern computers.</p>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Logic-gate-and-or-not.svg"
-            alt="Logic gates diagram"
-            className="rounded-2xl shadow-md mt-4"
-          />
-          <Button className="mt-4" asChild>
-            <a
-              href="https://www.youtube.com/watch?v=GyN2Rojp0h0"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Video on Boolean Logic in Computers <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
-        </>
-      ),
-    },
-    {
-      title: "Influence on Modern AI",
-      content: (
-        <>
-          <ul className="list-disc pl-5 mb-2">
-            <li>Binary logic underlies all programming and hardware</li>
-            <li>Search engines and databases use Boolean operators</li>
-            <li>Symbolic AI and reasoning systems rely on Boolean foundations</li>
-          </ul>
-          <img
-            src="https://builtin.com/sites/www.builtin.com/files/styles/og/public/2022-09/artificial-intelligence-examples.png"
-            alt="Modern AI applications"
-            className="rounded-2xl shadow-md mt-4"
-          />
-          <Button className="mt-4" asChild>
-            <a
-              href="https://www.ibm.com/think/topics/artificial-intelligence"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn About AI Today <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
-        </>
-      ),
-    },
-  ];
-
-  return (
-    <div className="flex flex-col items-center justify-center p-6">
-      <motion.div
-        key={slide}
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -50 }}
-        transition={{ duration: 0.5 }}
-        className="w-full max-w-2xl"
-      >
-        <Card className="p-6 rounded-2xl shadow-lg">
-          <h2 className="text-2xl font-bold mb-4 text-center">
-            {slides[slide].title}
-          </h2>
-          <CardContent>{slides[slide].content}</CardContent>
-        </Card>
-        <div className="flex justify-between mt-6">
-          <Button
-            onClick={() => setSlide((prev) => (prev > 0 ? prev - 1 : prev))}
-            disabled={slide === 0}
-          >
-            Previous
-          </Button>
-          <Button
-            onClick={() =>
-              setSlide((prev) => (prev < slides.length - 1 ? prev + 1 : prev))
-            }
-            disabled={slide === slides.length - 1}
-          >
-            Next
-          </Button>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>George Boole — Interactive Presentation</title>
+  <style>
+    :root{--bg:#0f172a;--card:#0b1220;--accent:#7c3aed;--text:#e6eef8}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{background:linear-gradient(180deg,#071026 0%, #081427 60%);color:var(--text);display:flex;align-items:center;justify-content:center;padding:36px}
+    .stage{width:960px;max-width:94%;}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:16px;padding:28px;box-shadow:0 8px 30px rgba(2,6,23,0.7);}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    h1{font-size:20px;margin:0}
+    .controls{display:flex;gap:8px}
+    button{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:600}
+    button.primary{background:var(--accent);border-color:transparent}
+    .slide{min-height:420px;display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:start}
+    .content{line-height:1.5}
+    .content h2{margin-top:0}
+    .bullets{margin:12px 0 0 18px}
+    .media{display:flex;flex-direction:column;gap:12px}
+    .media img{width:100%;height:auto;border-radius:12px;display:block}
+    .links{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+    a.link{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);text-decoration:none;color:var(--text);border:1px solid rgba(255,255,255,0.03)}
+    footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+    .dots{display:flex;gap:6px}
+    .dot{width:10px;height:10px;border-radius:99px;background:rgba(255,255,255,0.06)}
+    .dot.active{background:var(--accent);box-shadow:0 0 8px rgba(124,58,237,0.35)}
+    @media (max-width:900px){.slide{grid-template-columns:1fr;}.media{order:-1}}
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="card" role="region" aria-label="George Boole presentation">
+      <header>
+        <h1>George Boole — Interactive Presentation</h1>
+        <div class="controls">
+          <button id="prev">◀ Previous</button>
+          <button id="next" class="primary">Next ▶</button>
         </div>
-      </motion.div>
+      </header>
+
+      <main id="slide" class="slide" aria-live="polite">
+        <!-- Slides injected by JavaScript -->
+      </main>
+
+      <footer>
+        <div class="dots" id="dots" aria-hidden="false"></div>
+        <div>
+          <button id="viewNotes">View Speaker Notes</button>
+        </div>
+      </footer>
     </div>
-  );
-}
+  </div>
+
+  <template id="tpl">
+    <section class="content">
+      <h2 data-title></h2>
+      <div data-html></div>
+    </section>
+    <aside class="media">
+      <img data-img alt="slide image"/>
+      <div class="links" data-links></div>
+    </aside>
+  </template>
+
+  <dialog id="notes" style="color:#001;min-width:320px;border-radius:12px;padding:18px">
+    <h3>Speaker Notes</h3>
+    <div id="notesContent" style="white-space:pre-wrap;margin-top:8px"></div>
+    <menu style="display:flex;justify-content:flex-end;margin-top:14px;gap:8px">
+      <button id="closeNotes">Close</button>
+    </menu>
+  </dialog>
+
+  <script>
+    const slides = [
+      {
+        title: 'Early Life',
+        html: `
+          <p>Born <strong>November 2, 1815</strong> in Lincoln, England. Son of a shoemaker who encouraged his intellectual curiosity. Mostly self-taught, Boole became a schoolteacher by age 16 and later (1849) the first professor of mathematics at Queen's College, Cork.</p>
+          <ul class="bullets"><li>Self-educated in mathematics and languages</li><li>Early career as teacher and examiner</li><li>Appointed professor at Queen's College, Cork (1849)</li></ul>
+        `,
+        img: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/George_Boole_color.jpg',
+        links: [
+          {label:'Short biographical video', url:'https://www.youtube.com/watch?v=ywWBy6J5gz8'},
+          {label:'Stanford Encyclopedia short bio', url:'https://plato.stanford.edu/entries/boole/'},
+        ],
+        notes: 'Mention his lack of formal degree and how that shaped his independent approach.'
+      },
+
+      {
+        title: 'Major Contributions',
+        html: `
+          <p>George Boole transformed logic into a mathematical discipline. His landmark book <em>An Investigation of the Laws of Thought</em> (1854) introduced <strong>Boolean algebra</strong>.</p>
+          <ul class="bullets"><li>Boolean algebra: algebra of truth values (AND, OR, NOT)</li><li>Symbolic logic: representing reasoning with equations</li><li>Contributions to differential equations and probability</li></ul>
+        `,
+        img: 'https://miro.medium.com/v2/resize:fit:800/1*2GkZZgwyU_FvF7rjD3KyRQ.png',
+        links: [
+          {label:'Read Boole (1854) — excerpt', url:'https://archive.org/details/investigationofl00booluoft'},
+          {label:'Stanford Encyclopedia — detailed entry', url:'https://plato.stanford.edu/entries/boole/'},
+        ],
+        notes: 'Explain Boolean algebra with a quick example: A AND B = 1 only if A=1 and B=1.'
+      },
+
+      {
+        title: 'Contributions to AI & Computing',
+        html: `
+          <p>Although Boole lived long before electronic computers, his algebra is the foundation of modern digital logic. In the 20th century, Claude Shannon showed how Boolean algebra maps directly to electrical switching circuits.</p>
+          <ul class="bullets"><li>Boolean logic → logic gates (AND/OR/NOT)</li><li>Basis for digital circuits and binary computation</li><li>Used in early symbolic AI systems and expert systems</li></ul>
+        `,
+        img: 'https://upload.wikimedia.org/wikipedia/commons/2/2a/Logic-gate-and-or-not.svg',
+        links: [
+          {label:'Video: Boolean logic explained', url:'https://www.youtube.com/watch?v=GyN2Rojp0h0'},
+          {label:'Shannon (1938) — Turning Boolean algebra into circuits', url:'https://archive.org/details/mitpress_shannon1938'},
+        ],
+        notes: 'Tie Shannon’s work (1930s) to Boole, and then to how hardware enables AI today.'
+      },
+
+      {
+        title: 'Influence on Modern AI',
+        html: `
+          <p>Boole's ideas still underpin much of computing and AI, even if modern machine learning uses statistics and calculus heavily.</p>
+          <ul class="bullets"><li>Hardware & software are built on binary logic</li><li>Search, databases, and query languages use Boolean operators</li><li>Symbolic reasoning systems and certain AI pipelines still rely on Boolean logic</li></ul>
+        `,
+        img: 'https://builtin.com/sites/www.builtin.com/files/styles/og/public/2022-09/artificial-intelligence-examples.png',
+        links: [
+          {label:'Overview: AI technologies today (IBM)', url:'https://www.ibm.com/think/topics/artificial-intelligence'},
+          {label:'How boolean logic underlies computing', url:'https://cs.stanford.edu/people/eroberts/courses/cs181/projects/2011-12/BooleanLogic/'},
+        ],
+        notes: 'Make the point that even neural networks execute on hardware that uses Boolean-based gates and binary arithmetic.'
+      }
+    ];
+
+    // render
+    const tpl = document.getElementById('tpl');
+    const slideEl = document.getElementById('slide');
+    const dotsEl = document.getElementById('dots');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    const notesDialog = document.getElementById('notes');
+    const notesContent = document.getElementById('notesContent');
+    const viewNotes = document.getElementById('viewNotes');
+    const closeNotes = document.getElementById('closeNotes');
+
+    let index = 0;
+
+    function render(i){
+      index = i;
+      slideEl.innerHTML = '';
+      const clone = tpl.content.cloneNode(true);
+      clone.querySelector('[data-title]').textContent = slides[i].title;
+      clone.querySelector('[data-html]').innerHTML = slides[i].html;
+      clone.querySelector('[data-img]').src = slides[i].img;
+
+      const linksNode = clone.querySelector('[data-links]');
+      linksNode.innerHTML = '';
+      slides[i].links.forEach(l=>{
+        const a = document.createElement('a');
+        a.className = 'link';
+        a.href = l.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+        a.textContent = l.label + ' ↗';
+        linksNode.appendChild(a);
+      });
+
+      slideEl.appendChild(clone);
+
+      // dots
+      dotsEl.innerHTML = '';
+      slides.forEach((s, idx)=>{
+        const d = document.createElement('div'); d.className = 'dot' + (idx===i? ' active':''); d.title = s.title; dotsEl.appendChild(d);
+      });
+
+      prevBtn.disabled = i===0;
+      nextBtn.disabled = i===slides.length-1;
+
+      notesContent.textContent = slides[i].notes || '';
+    }
+
+    prevBtn.addEventListener('click', ()=>{ render(Math.max(0,index-1)); });
+    nextBtn.addEventListener('click', ()=>{ render(Math.min(slides.length-1,index+1)); });
+
+    viewNotes.addEventListener('click', ()=> notesDialog.showModal());
+    closeNotes.addEventListener('click', ()=> notesDialog.close());
+
+    // keyboard support
+    document.addEventListener('keydown', (e)=>{
+      if(e.key==='ArrowRight') render(Math.min(slides.length-1,index+1));
+      if(e.key==='ArrowLeft') render(Math.max(0,index-1));
+    });
+
+    // initial render
+    render(0);
+  </script>
+</body>
+</html>
