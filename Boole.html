@@ -1,0 +1,148 @@
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
+
+export default function BoolePresentation() {
+  const [slide, setSlide] = useState(0);
+
+  const slides = [
+    {
+      title: "George Boole: Early Life",
+      content: (
+        <>
+          <p className="mb-2">Born: November 2, 1815, Lincoln, England</p>
+          <p className="mb-2">Self-taught in advanced mathematics and languages.</p>
+          <p className="mb-2">Became first professor of mathematics at Queen’s College, Cork in 1849.</p>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/3/3c/George_Boole_color.jpg"
+            alt="Portrait of George Boole"
+            className="rounded-2xl shadow-md mt-4"
+          />
+          <Button className="mt-4" asChild>
+            <a
+              href="https://www.youtube.com/watch?v=ywWBy6J5gz8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn More <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+        </>
+      ),
+    },
+    {
+      title: "Major Contributions",
+      content: (
+        <>
+          <ul className="list-disc pl-5 mb-2">
+            <li>Developed Boolean Algebra (1854)</li>
+            <li>Applied algebra to logic and reasoning</li>
+            <li>Worked on differential equations and probability</li>
+          </ul>
+          <img
+            src="https://miro.medium.com/v2/resize:fit:800/1*2GkZZgwyU_FvF7rjD3KyRQ.png"
+            alt="Boolean algebra diagram"
+            className="rounded-2xl shadow-md mt-4"
+          />
+          <Button className="mt-4" asChild>
+            <a
+              href="https://plato.stanford.edu/entries/boole/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Stanford Encyclopedia Entry <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+        </>
+      ),
+    },
+    {
+      title: "Contributions to AI",
+      content: (
+        <>
+          <p className="mb-2">Boolean algebra laid the foundation for computer logic.</p>
+          <p className="mb-2">Early AI systems used Boolean logic for decision-making.</p>
+          <p className="mb-2">Claude Shannon applied Boolean algebra to digital circuits, enabling modern computers.</p>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Logic-gate-and-or-not.svg"
+            alt="Logic gates diagram"
+            className="rounded-2xl shadow-md mt-4"
+          />
+          <Button className="mt-4" asChild>
+            <a
+              href="https://www.youtube.com/watch?v=GyN2Rojp0h0"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Video on Boolean Logic in Computers <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+        </>
+      ),
+    },
+    {
+      title: "Influence on Modern AI",
+      content: (
+        <>
+          <ul className="list-disc pl-5 mb-2">
+            <li>Binary logic underlies all programming and hardware</li>
+            <li>Search engines and databases use Boolean operators</li>
+            <li>Symbolic AI and reasoning systems rely on Boolean foundations</li>
+          </ul>
+          <img
+            src="https://builtin.com/sites/www.builtin.com/files/styles/og/public/2022-09/artificial-intelligence-examples.png"
+            alt="Modern AI applications"
+            className="rounded-2xl shadow-md mt-4"
+          />
+          <Button className="mt-4" asChild>
+            <a
+              href="https://www.ibm.com/think/topics/artificial-intelligence"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn About AI Today <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+        </>
+      ),
+    },
+  ];
+
+  return (
+    <div className="flex flex-col items-center justify-center p-6">
+      <motion.div
+        key={slide}
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -50 }}
+        transition={{ duration: 0.5 }}
+        className="w-full max-w-2xl"
+      >
+        <Card className="p-6 rounded-2xl shadow-lg">
+          <h2 className="text-2xl font-bold mb-4 text-center">
+            {slides[slide].title}
+          </h2>
+          <CardContent>{slides[slide].content}</CardContent>
+        </Card>
+        <div className="flex justify-between mt-6">
+          <Button
+            onClick={() => setSlide((prev) => (prev > 0 ? prev - 1 : prev))}
+            disabled={slide === 0}
+          >
+            Previous
+          </Button>
+          <Button
+            onClick={() =>
+              setSlide((prev) => (prev < slides.length - 1 ? prev + 1 : prev))
+            }
+            disabled={slide === slides.length - 1}
+          >
+            Next
+          </Button>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
