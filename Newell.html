@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allen Newell: An AI Pioneer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            display: flex;
+            justify-content.center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .slideshow-container {
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            max-width: 900px;
+            width: 100%;
+            overflow: hidden;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .slide {
+            display: none;
+            flex-direction: column;
+            gap: 1.5rem;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+        }
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            text-align: center;
+        }
+        .slide-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #4b5563;
+            text-align: center;
+        }
+        .slide-content {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            color: #374151;
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .nav-button {
+            padding: 0.75rem 1.5rem;
+            background-color: #1c7ed6;
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            flex-grow: 1;
+        }
+        .nav-button:hover {
+            background-color: #196fbb;
+        }
+        .nav-button:disabled {
+            background-color: #9ca3af;
+            cursor: not-allowed;
+        }
+        .progress-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #d1d5db;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        .dot.active {
+            background-color: #1c7ed6;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .slideshow-container {
+                padding: 1rem;
+            }
+            .slide-title {
+                font-size: 2rem;
+            }
+            .slide-subtitle {
+                font-size: 1.25rem;
+            }
+            .slide-content {
+                font-size: 1rem;
+            }
+            .navigation-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <div id="slide1" class="slide active">
+        <h1 class="slide-title">Allen Newell: An AI Pioneer</h1>
+        <p class="slide-subtitle">A Look into the Life and Work of a Computer Science Visionary</p>
+        <div class="slide-content mt-4 text-justify">
+            <p>Allen Newell was a foundational figure in the development of artificial intelligence, cognitive science, and computer science. His groundbreaking work, often in collaboration with Herbert A. Simon, established the symbolic AI paradigm and paved the way for decades of research into how computers can simulate human problem-solving and thinking processes.</p>
+        </div>
+    </div>
+
+    <div id="slide2" class="slide">
+        <h1 class="slide-title">Early Life & Education</h1>
+        <div class="slide-content">
+            <p>Born in San Francisco in 1927, Allen Newell's academic journey started with a strong foundation in the sciences. He served in the U.S. Navy and later earned a bachelor's degree in physics from Stanford University in 1949. He briefly pursued graduate studies in mathematics at Princeton before joining the RAND Corporation, a research think tank. It was at RAND that he met his long-time collaborator, Herbert A. Simon, a pivotal moment that would shape his career. He later completed his Ph.D. in industrial administration at Carnegie Institute of Technology (now Carnegie Mellon University).</p>
+        </div>
+    </div>
+
+    <div id="slide3" class="slide">
+        <h1 class="slide-title">Major Contributions</h1>
+        <div class="slide-content">
+            <p>Newell's major contributions are foundational to the field of AI, particularly symbolic AI. His most notable works include:</p>
+            <ul class="list-disc list-inside mt-4 space-y-2">
+                <li><strong>The Logic Theory Machine (LTM):</strong> Developed in 1956 with Herbert Simon and J.C. Shaw, LTM is widely considered the first true AI program. It was designed to prove mathematical theorems from Bertrand Russell's <i>Principia Mathematica</i>, demonstrating that computers could perform complex reasoning tasks rather than just numerical calculations.</li>
+                <li><strong>The General Problem Solver (GPS):</strong> Building on LTM, GPS was an ambitious program designed to mimic human problem-solving strategies using "means-ends analysis." This involved breaking down a large problem into smaller, more manageable sub-goals, a method that is still relevant today.</li>
+                <li><strong>The Physical Symbol System Hypothesis:</strong> A landmark theory proposed with Simon, which states that any system (human or machine) that can manipulate physical symbols has the necessary and sufficient means for intelligent action.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="slide4" class="slide">
+        <h1 class="slide-title">Contributions to AI & Cognitive Science</h1>
+        <div class="slide-content">
+            <p>Newell's work was deeply intertwined with cognitive psychology. He saw AI not just as a branch of computer science but as a tool for understanding the human mind. His contributions include:</p>
+            <ul class="list-disc list-inside mt-4 space-y-2">
+                <li><strong>Cognitive Architectures:</strong> Newell was a pioneer in developing unified theories of cognition, leading to cognitive architectures like Soar. These models attempt to provide a complete, integrated framework for how a mind (human or artificial) processes information, learns, and solves problems across a wide range of tasks.</li>
+                <li><strong>Heuristic Search:</strong> His work on programs like LTM and GPS emphasized the use of heuristics, or mental shortcuts, to solve problems efficiently. This was a critical departure from brute-force methods and became a cornerstone of AI research.</li>
+                <li><strong>Human-Computer Interaction:</strong> Newell also contributed significantly to the field of HCI, particularly with the development of the GOMS model (Goals, Operators, Methods, and Selection rules), which is used to analyze and predict user behavior in human-machine systems.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="slide5" class="slide">
+        <h1 class="slide-title">Influence on Modern AI</h1>
+        <div class="slide-content">
+            <p>Allen Newell's legacy is profound and continues to influence modern AI in several ways:</p>
+            <ul class="list-disc list-inside mt-4 space-y-2">
+                <li><strong>The Roots of Symbolic AI:</strong> While connectionist (neural network) AI dominates today's headlines, symbolic AI, born from Newell's work, is still used in areas like knowledge representation, expert systems, and automated reasoning. It's the "reasoning" part of AI.</li>
+                <li><strong>Cognitive Models:</strong> The pursuit of creating human-like intelligence, as embodied in his SOAR architecture, continues today. Current research into explainable AI (XAI) and creating more transparent, reasoning-based systems owes a debt to his vision.</li>
+                <li><strong>Problem-Solving Paradigms:</strong> The fundamental concept of "reasoning as search" and using heuristics to navigate complex problem spaces, first explored by Newell, remains a core paradigm taught in computer science and used in modern algorithms for everything from game-playing to logistics optimization.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="progress-dots" id="progress-dots"></div>
+
+    <div class="navigation-buttons">
+        <button id="prevButton" class="nav-button" disabled>Previous</button>
+        <button id="nextButton" class="nav-button">Next</button>
+    </div>
+</div>
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+    const progressDotsContainer = document.getElementById('progress-dots');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        // Hide all slides
+        slides.forEach((slide) => {
+            slide.classList.remove('active');
+        });
+        // Show the current slide
+        slides[index].classList.add('active');
+        updateButtons();
+        updateDots();
+    }
+
+    function updateButtons() {
+        prevButton.disabled = currentSlide === 0;
+        nextButton.disabled = currentSlide === slides.length - 1;
+    }
+
+    function updateDots() {
+        // Clear all dots and recreate them
+        progressDotsContainer.innerHTML = '';
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === currentSlide) {
+                dot.classList.add('active');
+            }
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+            progressDotsContainer.appendChild(dot);
+        });
+    }
+
+    // Event listeners for navigation buttons
+    nextButton.addEventListener('click', () => {
+        if (currentSlide < slides.length - 1) {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentSlide > 0) {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+    });
+
+    // Initialize the slideshow
+    showSlide(currentSlide);
+</script>
+
+</body>
+</html>
