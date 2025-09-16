@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Pioneer: Ashish Vaswani</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .slide-container {
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            width: 100%;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 sm:p-8 md:p-12">
+
+    <div class="w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden p-6 sm:p-10">
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-800 mb-6 text-center tracking-tight">AI Pioneer: Ashish Vaswani</h1>
+        
+        <div id="slideshow" class="relative overflow-hidden">
+            <div id="slide-container" class="flex slide-container">
+                
+                <!-- Slide 1: Introduction -->
+                <div class="slide active">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-700 mb-4">Introduction to a Visionary</h2>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                        Ashish Vaswani is a leading computer scientist and researcher, widely recognized as a co-author of the groundbreaking paper "Attention Is All You Need." His work has fundamentally transformed the field of artificial intelligence, particularly in natural language processing.
+                    </p>
+                </div>
+                
+                <!-- Slide 2: Early Life and Education -->
+                <div class="slide">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-700 mb-4">Early Life and Education</h2>
+                    <ul class="text-left text-lg text-slate-600 space-y-3 max-w-2xl mx-auto">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-indigo-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Born in India, Ashish Vaswani grew up in Oman before moving to Nagpur.
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-indigo-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            He earned his undergraduate degree in computer science from the Birla Institute of Technology, Mesra.
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-indigo-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            He later moved to the U.S. and earned his Ph.D. in computer science from the University of Southern California (USC), where he focused on machine learning and natural language processing.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Slide 3: Major Contributions -->
+                <div class="slide">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-700 mb-4">Major Contributions: The Transformer</h2>
+                    <ul class="text-left text-lg text-slate-600 space-y-3 max-w-2xl mx-auto">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-indigo-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            As a research scientist at Google Brain, he co-authored the 2017 paper "Attention Is All You Need."
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-indigo-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            This paper introduced the Transformer model, which uses a "self-attention" mechanism to process data in parallel, a major improvement over previous sequential models like RNNs.
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-indigo-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            The Transformer's ability to handle long-range dependencies and its efficiency in training on massive datasets laid the foundation for modern large language models.
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Slide 4: Influence on Modern AI -->
+                <div class="slide">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-700 mb-4">Influence on Modern AI</h2>
+                    <ul class="text-left text-lg text-slate-600 space-y-3 max-w-2xl mx-auto">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-indigo-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            **LLMs:** The Transformer architecture is the core foundation for models like OpenAI's GPT series (including ChatGPT) and Google's BERT.
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-indigo-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            **Multi-modal AI:** The architecture has been adapted beyond language to fields like computer vision (Vision Transformers), drug discovery, and robotics.
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-indigo-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            **Career Path:** After his work at Google, Vaswani co-founded Adept AI and later Essential AI, focusing on building powerful AI systems to solve humanity's biggest challenges.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-center mt-8 space-x-4">
+            <button id="prevBtn" class="px-6 py-3 bg-slate-200 text-slate-800 rounded-full font-semibold shadow-md transition-all duration-300 hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                Previous
+            </button>
+            <button id="nextBtn" class="px-6 py-3 bg-indigo-600 text-white rounded-full font-semibold shadow-md transition-all duration-300 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                Next
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const slideContainer = document.getElementById('slide-container');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentSlide = 0;
+
+            const updateButtons = () => {
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === slides.length - 1;
+            };
+
+            const showSlide = (index) => {
+                // Ensure index is within bounds
+                if (index < 0 || index >= slides.length) return;
+
+                // Deactivate all slides
+                slides.forEach(slide => slide.classList.remove('active'));
+
+                // Activate the current slide
+                slides[index].classList.add('active');
+                
+                // Update the container transform
+                const offset = -index * 100;
+                slideContainer.style.transform = `translateX(${offset}%)`;
+
+                currentSlide = index;
+                updateButtons();
+            };
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < slides.length - 1) {
+                    showSlide(currentSlide + 1);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    showSlide(currentSlide - 1);
+                }
+            });
+
+            // Initial setup
+            showSlide(currentSlide);
+        });
+    </script>
+
+</body>
+</html>
