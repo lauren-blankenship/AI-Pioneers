@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbert Simon: The Pioneer of AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .slide {
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+
+    <div class="relative w-full max-w-4xl bg-white rounded-2xl shadow-xl overflow-hidden p-6">
+        <div class="flex flex-col items-center text-center">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Herbert Simon: A Pioneer of AI</h1>
+            <p class="text-gray-500 mb-6">Exploring the Mind Behind Modern AI</p>
+        </div>
+
+        <!-- Slideshow Container -->
+        <div id="slideshow" class="w-full h-96 flex items-center justify-center relative">
+
+            <!-- Slide 1: Early Life -->
+            <div class="slide active flex-col items-center justify-center text-center">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4">Early Life and Education</h2>
+                <p class="text-gray-700 max-w-lg mx-auto">
+                    Born in Milwaukee, Wisconsin, in 1916, Herbert A. Simon was a curious student from a young age. He pursued his education at the University of Chicago, where he studied political science and developed a deep interest in the science of human decision-making. His interdisciplinary approach laid the groundwork for his future work.
+                </p>
+            </div>
+
+            <!-- Slide 2: Major Contributions -->
+            <div class="slide flex-col items-center justify-center text-center">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4">A True Polymath</h2>
+                <p class="text-gray-700 max-w-lg mx-auto">
+                    Simon's impact extended far beyond a single field. He was a polymath who made fundamental contributions to economics, cognitive psychology, and computer science. He received the Nobel Memorial Prize in Economic Sciences in 1978 for his work on decision-making processes in organizations. 
+                </p>
+            </div>
+
+            <!-- Slide 3: Bounded Rationality -->
+            <div class="slide flex-col items-center justify-center text-center">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4">Bounded Rationality</h2>
+                <p class="text-gray-700 max-w-lg mx-auto">
+                    One of his most famous concepts is "bounded rationality." This theory challenges the idea of perfect economic rationality, arguing that human decision-making is limited by available information, cognitive capacity, and time. Instead of finding the "optimal" solution, people often "satisfice," choosing a solution that is simply good enough.
+                </p>
+            </div>
+
+            <!-- Slide 4: Contributions to AI -->
+            <div class="slide flex-col items-center justify-center text-center">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4">Foundational AI Work</h2>
+                <p class="text-gray-700 max-w-lg mx-auto">
+                    In the mid-1950s, Simon co-founded the field of artificial intelligence. With his colleague Allen Newell, he created the Logic Theorist (1956) and the General Problem Solver (GPS) (1957). These were among the first AI programs, designed to mimic human reasoning and problem-solving through the use of heuristics and means-ends analysis.
+                </p>
+            </div>
+
+            <!-- Slide 5: The General Problem Solver -->
+            <div class="slide flex-col items-center justify-center text-center">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4">General Problem Solver (GPS)</h2>
+                <p class="text-gray-700 max-w-lg mx-auto">
+                    The GPS was a landmark achievement. It was the first program to separate its problem-solving strategy from the specific information of a problem. This "means-ends analysis" approach involved identifying the difference between the current state and the goal state, and then applying a series of operations to reduce that difference. 
+                </p>
+            </div>
+
+            <!-- Slide 6: Influence on Modern AI -->
+            <div class="slide flex-col items-center justify-center text-center">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4">Influence on Modern AI</h2>
+                <p class="text-gray-700 max-w-lg mx-auto">
+                    Simon's work on problem-solving, heuristics, and information processing laid the groundwork for today's AI systems. His emphasis on symbolic reasoning and modeling cognitive processes influenced the early development of expert systems and symbolic AI, which were dominant for decades. Although modern AI often uses neural networks, the core idea of breaking down complex problems and simulating intelligent behavior remains central, a concept he pioneered.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-center mt-6 space-x-4">
+            <button id="prevBtn" class="px-6 py-2 bg-gray-300 text-gray-800 font-semibold rounded-full shadow-md hover:bg-gray-400 transition-colors duration-300">Previous</button>
+            <button id="nextBtn" class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition-colors duration-300">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        const showSlide = (n) => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        };
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            showSlide(currentSlide + 1);
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            showSlide(currentSlide - 1);
+        });
+
+        // Initialize slideshow
+        showSlide(0);
+    </script>
+</body>
+</html>
