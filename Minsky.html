@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvin Minsky: AI Pioneer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .slide {
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .slide-button {
+            transition: all 0.3s ease;
+        }
+        .slide-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 sm:p-8">
+
+    <!-- Slideshow Container -->
+    <div class="bg-white rounded-3xl shadow-2xl p-6 sm:p-10 w-full max-w-4xl mx-auto flex flex-col items-center">
+
+        <!-- Slides -->
+        <div id="slides-container" class="relative w-full h-[500px] overflow-hidden">
+            <!-- Slide 1: Title Slide -->
+            <div class="slide active absolute inset-0 flex items-center justify-center p-6">
+                <div class="text-center">
+                    <h1 class="text-4xl sm:text-6xl font-bold text-gray-800 mb-4">Marvin Minsky</h1>
+                    <p class="text-xl sm:text-2xl text-gray-600">The Father of Artificial Intelligence</p>
+                </div>
+            </div>
+
+            <!-- Slide 2: Early Life -->
+            <div class="slide absolute inset-0 p-6 flex items-center justify-center">
+                <div class="bg-gray-50 rounded-2xl p-6 sm:p-10 shadow-lg w-full h-full flex flex-col justify-center">
+                    <h2 class="text-2xl sm:text-4xl font-bold text-gray-800 mb-4 text-center">Early Life & Education</h2>
+                    <ul class="text-lg sm:text-xl text-gray-700 space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3 text-2xl">•</span>
+                            <span>Born on August 9, 1927, in New York City. His father was an eye surgeon.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3 text-2xl">•</span>
+                            <span>Attended the Bronx High School of Science, a high school renowned for producing Nobel laureates.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3 text-2xl">•</span>
+                            <span>Served in the U.S. Navy during World War II, sparking an interest in mathematics and computing.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3 text-2xl">•</span>
+                            <span>Earned a B.A. in Mathematics from Harvard University (1950) and a Ph.D. in Mathematics from Princeton University (1954).</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Slide 3: Major Contributions -->
+            <div class="slide absolute inset-0 p-6 flex items-center justify-center">
+                <div class="bg-gray-50 rounded-2xl p-6 sm:p-10 shadow-lg w-full h-full flex flex-col justify-center">
+                    <h2 class="text-2xl sm:text-4xl font-bold text-gray-800 mb-4 text-center">Major Contributions</h2>
+                    <ul class="text-lg sm:text-xl text-gray-700 space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3 text-2xl">•</span>
+                            <span>**Co-founder of the MIT AI Lab (1959):** He co-founded the MIT Artificial Intelligence Project (later the AI Laboratory) with John McCarthy, establishing a leading center for AI research.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3 text-2xl">•</span>
+                            <span>**Perceptrons (1969):** Co-authored a book that critiqued the limitations of a simple type of neural network, shifting the focus of research to symbolic AI for a time.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3 text-2xl">•</span>
+                            <span>**The Society of Mind (1985):** Proposed a revolutionary theory of intelligence, suggesting that the mind is a collection of simple "agents" that interact to produce complex behavior.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3 text-2xl">•</span>
+                            <span>**Inventions:** His work extended beyond theory, including the invention of the first head-mounted graphical display and the confocal scanning microscope.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Slide 4: Influence on Modern AI -->
+            <div class="slide absolute inset-0 p-6 flex items-center justify-center">
+                <div class="bg-gray-50 rounded-2xl p-6 sm:p-10 shadow-lg w-full h-full flex flex-col justify-center">
+                    <h2 class="text-2xl sm:text-4xl font-bold text-gray-800 mb-4 text-center">Influence on Modern AI</h2>
+                    <ul class="text-lg sm:text-xl text-gray-700 space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3 text-2xl">•</span>
+                            <span>**Symbolic AI:** His early focus on symbolic reasoning and knowledge representation (the "frames" concept) influenced the development of expert systems.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3 text-2xl">•</span>
+                            <span>**The "Society of Mind":** This theory laid the groundwork for modern concepts of "multi-agent systems" and modular, hierarchical AI architectures.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3 text-2xl">•</span>
+                            <span>**Bridging Disciplines:** Minsky's work helped establish the interdisciplinary nature of AI, drawing connections between computer science, psychology, and neuroscience.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3 text-2xl">•</span>
+                            <span>**Mentorship:** As a professor at MIT, he mentored a generation of AI researchers who went on to lead the field and shape its direction.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex items-center justify-between w-full mt-6">
+            <button id="prevBtn" class="slide-button bg-blue-500 text-white font-bold py-2 px-6 rounded-full shadow-lg hover:bg-blue-600 transition-colors duration-300">Previous</button>
+            <div id="slideCounter" class="text-gray-600 font-medium">1/4</div>
+            <button id="nextBtn" class="slide-button bg-blue-500 text-white font-bold py-2 px-6 rounded-full shadow-lg hover:bg-blue-600 transition-colors duration-300">Next</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            const slideCounter = document.getElementById('slideCounter');
+            let currentSlideIndex = 0;
+
+            const updateSlides = (index) => {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) {
+                        slide.classList.add('active');
+                    }
+                });
+                slideCounter.textContent = `${index + 1}/${slides.length}`;
+            };
+
+            nextBtn.addEventListener('click', () => {
+                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                updateSlides(currentSlideIndex);
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+                updateSlides(currentSlideIndex);
+            });
+
+            updateSlides(currentSlideIndex);
+        });
+    </script>
+
+</body>
+</html>
