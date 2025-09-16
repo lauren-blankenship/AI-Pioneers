@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John McCarthy: The Father of AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem;
+        }
+        .slideshow-container {
+            position: relative;
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            padding: 2rem;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+            transform: scale(1);
+        }
+        .slide {
+            display: none;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .slide-active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .nav-button {
+            background-color: #4f46e5;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+        .nav-button:hover {
+            background-color: #4338ca;
+            transform: scale(1.05);
+        }
+        .nav-button:disabled {
+            background-color: #d1d5db;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .quote-box {
+            background-color: #e5e7eb;
+            border-left: 4px solid #4f46e5;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="container">
+        <div class="text-center mb-10">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-2">John McCarthy: An AI Pioneer</h1>
+            <p class="text-lg text-gray-600">Explore the life and work of the man who coined "Artificial Intelligence."</p>
+        </div>
+
+        <div class="slideshow-container">
+            <div id="slide-1" class="slide slide-active">
+                <h2 class="text-3xl font-bold mb-4 text-purple-700">Early Life & Education</h2>
+                <p class="text-xl leading-relaxed text-gray-800">
+                    John McCarthy was born on September 4, 1927. As a teenager, he taught himself college-level math. He earned his B.S. in Mathematics from Caltech in 1948 and his Ph.D. from Princeton University in 1951.
+                </p>
+                
+            </div>
+
+            <div id="slide-2" class="slide">
+                <h2 class="text-3xl font-bold mb-4 text-purple-700">Coined "Artificial Intelligence"</h2>
+                <p class="text-xl leading-relaxed text-gray-800">
+                    In 1955, McCarthy proposed a summer workshop at Dartmouth College to explore the possibility of creating "thinking machines." He titled the proposal, "A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence," coining the term for the first time.
+                </p>
+                <div class="quote-box mt-6">
+                    <p class="italic text-gray-700">"The science and engineering of making intelligent machines."</p>
+                    <p class="text-right text-sm font-semibold text-gray-600">- John McCarthy, 1955</p>
+                </div>
+            </div>
+
+            <div id="slide-3" class="slide">
+                <h2 class="text-3xl font-bold mb-4 text-purple-700">The LISP Programming Language</h2>
+                <p class="text-xl leading-relaxed text-gray-800">
+                    To support his research in AI, McCarthy developed the LISP (LISt Processor) programming language in 1958. It was designed for symbolic computation and became the preferred language for AI research for decades, influencing many modern languages.
+                </p>
+                 
+            </div>
+
+            <div id="slide-4" class="slide">
+                <h2 class="text-3xl font-bold mb-4 text-purple-700">Pioneering Time-Sharing</h2>
+                <p class="text-xl leading-relaxed text-gray-800">
+                    McCarthy also invented computer time-sharing, a concept that allowed many users to access a single computer simultaneously. This revolutionary idea was a vital precursor to modern interactive computing and cloud services.
+                </p>
+            </div>
+
+            <div id="slide-5" class="slide">
+                <h2 class="text-3xl font-bold mb-4 text-purple-700">Influence on Modern AI</h2>
+                <p class="text-xl leading-relaxed text-gray-800">
+                    McCarthy's work established the symbolic AI approach, which focuses on formal logic and knowledge representation. This foundation continues to influence areas like knowledge graphs and automated reasoning. He provided the core vision that drives the entire field of AI today.
+                </p>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between mt-8">
+                <button id="prevBtn" class="nav-button opacity-75" disabled>Previous</button>
+                <button id="nextBtn" class="nav-button">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('slide-active'));
+                slides[index].classList.add('slide-active');
+            }
+
+            function updateButtons() {
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === slides.length - 1;
+                prevBtn.classList.toggle('opacity-75', prevBtn.disabled);
+                nextBtn.classList.toggle('opacity-75', nextBtn.disabled);
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                    updateButtons();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                    updateButtons();
+                }
+            });
+
+            showSlide(currentSlide);
+            updateButtons();
+        });
+    </script>
+</body>
+</html>
